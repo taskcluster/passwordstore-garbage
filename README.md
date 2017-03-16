@@ -79,11 +79,12 @@ password or risk pasting it into a chat.
 
 ## ..add or update a secret
 
-Run `pass edit <secretname>`. This will open an editor where you can edit the
-password.
+If it's been a while, run `git -C ~/.password-store pull` to get the latest
+passwords.  Then run `pass edit <secretname>`. This will open an editor where
+you can edit the password.
 
 Always put the password alone on the first line, with any additional
-information two lines later:
+information two lines later (like a git commit message):
 
 ```
 wiejeiWuez0ohhuoyuoGh7Neequ6eeT1JidahjiD3loi3sio8b
@@ -91,8 +92,8 @@ wiejeiWuez0ohhuoyuoGh7Neequ6eeT1JidahjiD3loi3sio8b
 username: taskcluster-accounts@mozilla.com
 ```
 
-Once you're done, `git -C ~/.password-store commit` and `git -C
-~/.password-store push` so everyone else can see your handiwork.
+Once you're done, `git -C ~/.password-store push` so everyone else can see your
+handiwork.
 
 ### Troubleshooting
 
