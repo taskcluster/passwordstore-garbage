@@ -119,6 +119,9 @@ it is (in this case, `gpg --list-keys C816CF70AB94621D`) and verify the
 fingerprint as above, then sign and trust the key.  Note that the key id in the
 error message is not the same as the fingerprint!
 
+If you find that this is your own key, use `--edit-key` to edit the key and set
+its trust level to "ultimate". Any key for which you have the secret key should
+have ultimate trust.
 
 ## ..add a new person to the team
 
