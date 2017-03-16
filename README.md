@@ -133,8 +133,14 @@ fingerprint.  You can get their fingerprint by going to their homepage on
 https://keybase.io and clicking the key link.  Select the full-length
 fingerprint and copy/paste. It should paste without spaces.
 
-Sign the key (encourage everyone to do this actually) and publish the
-signature:
+Verify the new key. The new user can see their fingerprint locally with
+
+```
+gpg --list-secret-keys --fingerprint
+```
+
+Having verified the key both in keybase and some other channel, sign the key
+(encourage everyone to do this actually) and publish the signature:
 
 ```
 gpg --sign-key $FINGERPRINT
