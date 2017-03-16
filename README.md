@@ -1,6 +1,8 @@
 # TaskCluster Passwords
 
-**NOTE** This is currently full of garbage secrets.  Don't put anything important here, yet.
+> **NOTE** This is currently full of garbage secrets.  Don't put anything
+> important here, yet. When everyone is able to read and write secrets here, we
+> will move this to a private git repository and add the real secrets.
 
 This repository contains passwords for the TaskCluster team.  It is designed to
 be used with the [passwordstore](https://www.passwordstore.org/) utility,
