@@ -49,9 +49,10 @@ gpg> save
 $ gpg --keyserver gpg.mozilla.org --send-key $FINGERPRINT
 ```
 
-If you've got the time, it is smart to do this for several people. If you're a
-GnuPG guru with a carefully groomed PGP keychain, then of course you can make
-your own choices here.
+Note that you may have already signed this key.  If so, great!  Just set the
+trust and you're done.  If you've got the time, it is smart to do this for
+several people. If you're a GnuPG guru with a carefully groomed PGP keychain,
+then of course you can make your own choices here.
 
 
 # How To..
