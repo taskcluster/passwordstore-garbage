@@ -19,19 +19,16 @@ Now you'll need to set up GPG, if you haven't already
 
 * Get yourself set up with a [keybase](https://keybase.io) account, if you haven't already.
   * Generate a private key locally following the keybase process.
-  * Follow (`keybase follow <username>`) all of the other team members listed in [.team.txt](.team.txt).
-  * If you aren't already added, get someone who is already set up to follow the instructions below.
+  * Run the `follow` script in the root of this repo which will follow the team on Keybase and track their GPG keys
 
-Now, you should be able to read a secret (see below)! Before you go on, though,
-set yourself up to edit secrets, too. First, download the public keys for the
-whole team:
-
-```
-gpg --keyserver gpg.mozilla.org --recv-keys $(grep -v '#' < ~/.password-store/.team.txt | awk '{ print $2 }')
+```bash
+~/.password-store/follow.sh
 ```
 
-Now, you need to find some way to ensure that these are the right keys, and
-tell GnuPG that. It insists!
+_Note: If you aren't already added, get someone who is already set up to follow the instructions below._
+
+Now, you should be able to read a secret (see below), but you need to find some way to ensure that these are the
+right keys, and tell GnuPG that. It insists!
 
 The most expedient way to accomplish this is to trust the key of someone who
 has signed all of the other team members' keys. Most likely, this is the person
