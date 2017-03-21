@@ -40,13 +40,14 @@ the fingerprint in `.team.txt`, and verify the fingerprint with them via some
 other channel, too (irc is OK). Once that's done:
 
 ```
-$ gpg --edit-key $FINGERPRINT
+FINGERPRINT=".."
+$ gpg --edit-key "$FINGERPRINT"
 gpg> trust
 # Set the trust to "fully", meaning "Their signature on a key would be as good as your own"
 gpg> sign
 # answer yes
 gpg> save
-$ gpg --keyserver gpg.mozilla.org --send-key $FINGERPRINT
+$ gpg --keyserver gpg.mozilla.org --send-key "$FINGERPRINT"
 ```
 
 Note that you may have already signed this key.  If so, great!  Just set the
@@ -149,9 +150,9 @@ Having verified the key both in keybase and some other channel, sign the key
 (encourage everyone to do this actually) and publish the signature:
 
 ```
-gpg --sign-key $FINGERPRINT
+gpg --sign-key "$FINGERPRINT"
 # answer questions
-gpg --keyserver gpg.mozilla.org --send-key $FINGERPRINT
+gpg --keyserver gpg.mozilla.org --send-key "$FINGERPRINT"
 ```
 
 Then re-init the password store:
@@ -184,7 +185,7 @@ done
 where KEYID is found in the `pub` key in
 
 ```
-$ gpg --list-keys $FINGERPRINT
+$ gpg --list-keys "$FINGERPRINT"
 pub   2048R/D56B32E5 2017-03-15
 uid                  person@somewhere.com
 sub   2048R/33198A27 2017-03-15
