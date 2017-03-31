@@ -55,9 +55,20 @@ trust and you're done.  If you've got the time, it is smart to do this for
 several people. If you're a GnuPG guru with a carefully groomed PGP keychain,
 then of course you can make your own choices here.
 
+## Double-Check Self-Trust
+
+You should trust your own key ultimately. You trust yourself, right? This is
+the default configuration for gpg, but for some reason it's a common error. So:
+
+```
+MY_FINGERPRINT=".."  # from .team.txt, for example
+gpg --edit-key "$MY_FINGERPRINT"
+gpg> trust
+# Set the trust to "ultimate"
+gpg> save
+```
 
 # How To..
-
 
 ## ..read a secret
 
