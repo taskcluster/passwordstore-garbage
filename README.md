@@ -15,12 +15,15 @@ although that is not required.
 * Clone this repository to `~/.password-store`
 * Run `pass`; you should see a hierarchical list of the names of passwords.
 
-Now you'll need to set up GPG, if you haven't already
+Now you'll need to set up GPG, if you haven't already.  You can do this two ways:
 
-* Get yourself set up with a [keybase](https://keybase.io) account, if you haven't already.
+1. Get yourself set up with a [keybase](https://keybase.io) account, if you haven't already.
   * Generate a private key locally following the keybase process.
   * Follow (`keybase follow <username>`) all of the other team members listed in [.team.txt](.team.txt).
-  * If you aren't already added, get someone who is already set up to follow the instructions below.
+2. Set up GPG manually and upload your keys to `gpg.mozilla.org`
+
+If you aren't already added to this repo, get someone who is already set up to
+follow the instructions below.
 
 Now, you should be able to read a secret (see below)! Before you go on, though,
 set yourself up to edit secrets, too. First, download the public keys for the
@@ -138,13 +141,15 @@ have ultimate trust.
 
 ## ..add a new person to the team
 
-This new person should be on keybase already.  Follow them.  Then get a copy of
-the user's key locally.
+If the new person is on keybase, follow them, then get a copy of the user's key
+locally. If they're not on keybase, get their key from the keyserver.
 
 ```
-USER=..
 curl https://keybase.io/$USER/pgp_keys.asc | gpg --import
+# or
+gpg --recv-keys --keyserver gpg.mozilla.org $USER_FINGERPRINT
 ```
+
 
 Update your repo, then edit `.team.txt` to include their username and
 fingerprint.  You can get their fingerprint by going to their homepage on
@@ -157,8 +162,10 @@ Verify the new key. The new user can see their fingerprint locally with
 gpg --list-secret-keys --fingerprint
 ```
 
-Having verified the key both in keybase and some other channel, sign the key
-(encourage everyone to do this actually) and publish the signature:
+Check their keybase claims to find one you know -- often a Github username.
+This serves as one form of verification, so something simple and out-of-band
+such as irc or email makes a good second factor.  Having verified the key, sign
+it (encourage everyone to do this actually) and publish the signature:
 
 ```
 gpg --sign-key "$FINGERPRINT"
