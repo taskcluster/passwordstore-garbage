@@ -1,8 +1,6 @@
-# TaskCluster Passwords
+# TaskCluster Passwordstore
 
-> **NOTE** This repository is no longer in use!
-
-The secrets are now at ssh://gitolite3@git-internal.mozilla.org/taskcluster/secrets.git.
+The Taskcluster team's psaswords are at ssh://gitolite3@git-internal.mozilla.org/taskcluster/secrets.git.
 
 To connect to that repo, set up automatic tunneling by adding the following to
 `~/.ssh/config`:
@@ -29,7 +27,7 @@ and pull the updated information:
 git pull
 ```
 
-You will need to enter MFA credentials with each access.
+You will need to enter MFA credentials with each access.  Once you have access, see the README in that file for next steps.
 
 ## Troubleshooting
 
